@@ -51,7 +51,7 @@ PoliticalSys::PoliticalSys(char *&fileName) { //constructor
                     if (partyType == 'D') {
                         politician = new DemocraticLeaderPolitician(firstName, lastName, id, power);
                         if (politician == nullptr)
-                            abort;
+                            abort();
 
                         for (auto &party: parties) {
                             if (politician->getParty() == nullptr ||
@@ -62,7 +62,7 @@ PoliticalSys::PoliticalSys(char *&fileName) { //constructor
                     } else {
                         politician = new RepublicanLeaderPolitician(firstName, lastName, id, power);
                         if (politician == nullptr)
-                            abort;
+                            abort();
 
                         for (auto &party: parties) {
                             if (politician->getParty() == nullptr ||
@@ -76,7 +76,7 @@ PoliticalSys::PoliticalSys(char *&fileName) { //constructor
                     if (partyType == 'D') {
                         politician = new DemocraticSocialPolitician(firstName, lastName, id, power);
                         if (politician == nullptr)
-                            abort;
+                            abort();
 
                         for (auto &party: parties) {
                             if (politician->getParty() == nullptr ||
@@ -87,7 +87,7 @@ PoliticalSys::PoliticalSys(char *&fileName) { //constructor
                     } else {
                         politician = new RepublicanSocialPolitician(firstName, lastName, id, power);
                         if (politician == nullptr)
-                            abort;
+                            abort();
 
                         for (auto &party: parties) {
                             if (politician->getParty() == nullptr ||
@@ -109,11 +109,11 @@ PoliticalSys::PoliticalSys(char *&fileName) { //constructor
                 if (partyType == 'D') {
                     party = new DemocraticParty(partyName);
                     if (party == nullptr)
-                        abort;
+                        abort();
                 } else {
                     party = new RepublicanParty(partyName);
                     if (party == nullptr)
-                        abort;
+                        abort();
                 }
                 parties.push_back(party);
                 partiesCopy.push_back(party);
@@ -177,7 +177,7 @@ status PoliticalSys::addPolitician() { //add politician to correct party
         if (partyType == 'D') {
             politician = new DemocraticLeaderPolitician(firstName, lastName, id, power);
             if (politician == nullptr)
-                abort;
+                abort();
 
             for (auto &party: parties) {
                 if (politician->getParty() == nullptr ||
@@ -188,7 +188,7 @@ status PoliticalSys::addPolitician() { //add politician to correct party
         } else {
             politician = new RepublicanLeaderPolitician(firstName, lastName, id, power);
             if (politician == nullptr)
-                abort;
+                abort();
 
             for (auto &party: parties) {
                 if (politician->getParty() == nullptr ||
@@ -202,7 +202,7 @@ status PoliticalSys::addPolitician() { //add politician to correct party
         if (partyType == 'D') {
             politician = new DemocraticSocialPolitician(firstName, lastName, id, power);
             if (politician == nullptr)
-                abort;
+                abort();
 
             for (auto &party: parties) {
                 if (politician->getParty() == nullptr ||
@@ -213,7 +213,7 @@ status PoliticalSys::addPolitician() { //add politician to correct party
         } else {
             politician = new RepublicanSocialPolitician(firstName, lastName, id, power);
             if (politician == nullptr)
-                abort;
+                abort();
 
             for (auto &party: parties) {
                 if (politician->getParty() == nullptr ||
@@ -248,11 +248,11 @@ status PoliticalSys::addParty() { //add new party
     if (partyType == 'D') {
         party = new DemocraticParty(partyName);
         if (party == nullptr)
-            abort;
+            abort();
     } else {
         party = new RepublicanParty(partyName);
         if (party == nullptr)
-            abort;
+            abort();
     }
     parties.push_back(party);
     for (auto &politician: politicians) {
